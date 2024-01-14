@@ -1,0 +1,237 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int choice,a[20][20],b[20][20],c[20][20];
+	int i,j,k,sum,r1,c1,r2,c2;
+	clrscr();
+	printf("1.Addition of matrices ");
+	printf("\n2.Subtraction of matrices ");
+	printf("\n3.Multiplication of matrices ");
+	printf("\n4.Transpose of matrices ");
+	printf("\n5.Exit");
+	printf("\nEnter any 1 choice= ");
+	scanf("%d",&choice);
+	switch(choice)
+	{
+		case 1:
+		{
+			printf("Enter rows and column of 1 matrix= ");
+			scanf("%d %d",&r1,&c1);
+			printf("Enter rows and column of 2 matrix= ");
+			scanf("%d %d",&r2,&c2);
+			if(r1!=r2 || c1!=c2)
+			{
+			printf("Addition can't perform");
+			break;
+			}
+			else
+			{
+			printf("Enter elements of 1 matrix= ");
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					scanf("%d",&a[i][j]);
+				}
+			}
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					printf("%d\t",a[i][j]);
+				}
+				printf("\n");
+			}
+			printf("Enter elements of 2 matrix= ");
+			for(i=0;i<r2;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					scanf("%d",&b[i][j]);
+				}
+			}
+			for(i=0;i<r2;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					printf("%d\t",b[i][j]);
+				}
+				printf("\n");
+			}
+			printf("Addition=\n");
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					printf("%d\t",a[i][j]+b[i][j]);
+				}
+				printf("\n");
+			}
+			}
+		}
+		break;
+		case 2:
+		{
+			printf("Enter rows and column of 1 matrix= ");
+			scanf("%d %d",&r1,&c1);
+			printf("Enter rows and column of 2 matrix= ");
+			scanf("%d %d",&r2,&c2);
+			if(r1!=r2 || c1!=c2)
+			{
+			printf("Subtraction can't perform");
+			break;
+			}
+			else
+			{
+			printf("Enter elements of 1 matrix= ");
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					scanf("%d",&a[i][j]);
+				}
+			}
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					printf("%d\t",a[i][j]);
+				}
+				printf("\n");
+			}
+			printf("Enter elements of 2 matrix= ");
+			for(i=0;i<r2;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					scanf("%d",&b[i][j]);
+				}
+			}
+			for(i=0;i<r2;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					printf("%d\t",b[i][j]);
+				}
+				printf("\n");
+			}
+			printf("Subtraction=\n");
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					printf("%d\t",a[i][j]-b[i][j]);
+				}
+				printf("\n");
+			}
+			}
+		}
+	break;
+	case 3:
+	{
+			printf("Enter rows and column of 1 matrix= ");
+			scanf("%d %d",&r1,&c1);
+			printf("Enter rows and column of 2 matrix= ");
+			scanf("%d %d",&r2,&c2);
+			if(c1!=r2)
+			{
+			printf("Multiplication can't perform");
+			break;
+			}
+			else
+			{
+			printf("Enter elements of 1 matrix= ");
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					scanf("%d",&a[i][j]);
+				}
+			}
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					printf("%d\t",a[i][j]);
+				}
+				printf("\n");
+			}
+			printf("Enter elements of 2 matrix= ");
+			for(i=0;i<r2;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					scanf("%d",&b[i][j]);
+				}
+			}
+			for(i=0;i<r2;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					printf("%d\t",b[i][j]);
+				}
+				printf("\n");
+			}
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					sum=0;
+					for(k=0;k<c1;k++)
+					{
+						sum+=a[i][k]*b[k][j];
+					}
+					c[i][j]=sum;
+				}
+				printf("\n");
+			}
+			printf("Multiplication= \n");
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c2;j++)
+				{
+					printf("%d\t",c[i][j]);
+				}
+				printf("\n");
+			}
+			}
+	}
+	break;
+	case 4:
+	{
+			printf("Enter rows and column of 1 matrix= ");
+			scanf("%d %d",&r1,&c1);
+			printf("Enter elements of 1 matrix= ");
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					scanf("%d",&a[i][j]);
+				}
+			}
+			for(i=0;i<r1;i++)
+			{
+				for(j=0;j<c1;j++)
+				{
+					printf("%d\t",a[i][j]);
+				}
+				printf("\n");
+			}
+			printf("Transpose=\n");
+			for(i=0;i<c1;i++)
+			{
+				for(j=0;j<r1;j++)
+				{
+					printf("%d\t",a[j][i]);
+				}
+				printf("\n");
+			}
+	}
+	case 5:
+	break;
+	default:
+	printf("Invalid choice");
+	}
+	getch();
+}

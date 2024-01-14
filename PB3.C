@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[20][20],i,j,sum,r1,c1,flag=0;
+	clrscr();
+	printf("Enter no of row and column= ");
+	scanf("%d %d",&r1,&c1);
+	if(r1!=c1)
+	{
+		printf("Invalid");
+	}
+	else
+	{
+	printf("Enter elements: ");
+	for(i=0;i<r1;i++)
+	{
+		for(j=0;j<c1;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	for(i=0;i<r1;i++)
+	{
+		for(j=0;j<c1;j++)
+		{
+			printf("%d\t",a[i][j]);
+		}
+		printf("\n");
+	}
+	for(i=0;i<r1;i++)
+	{
+		for(j=0;j<c1;j++)
+		{
+			if(i==j && a[i][j]!=1)
+			{
+				flag=1;
+				break;
+			}
+			else if(i!=j && a[i][j]!=0)
+			{
+				flag=1;
+				break;
+			}
+		}
+	}
+	if(flag==0)
+	{
+		printf("Above matrix is a identity matrix");
+	}
+	else
+	{
+		printf("Above matrix is not a identity matrix");
+	}
+	}
+	getch();
+}

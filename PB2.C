@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int num[50],i,count=0,size,j;
+	clrscr();
+	printf("Enter size= ");
+	scanf("%d",&size);
+	printf("Enter elements: ");
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&num[i]);
+	}
+	for(i=0;i<size;i++)
+	{
+		for(j=i+1;j<size;j++)
+		{
+			if(num[i]==num[j])
+			{
+				count++;
+			}
+		}
+	}
+	printf("Count=%d",count);
+	getch();
+}
