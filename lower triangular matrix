@@ -22,19 +22,6 @@ void main()
 		}
 		printf("\n");
 	}
-	for(i=0;i<r1;i++)
-	{
-		for(j=0;j<c1;j++)
-		{
-			for(k=0;k<r1;k++)
-			{
-				for(l=k+1;l<c1;l++)
-			       {
-					printf("%d\t",a[i][j]*a[k][l]);
-			       }
-			       printf("\n");
-			}
-		}
 	}
 	getch();
 }
